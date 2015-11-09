@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object that links Accounts, Contacts, and Programs, and geography together as an idea for a future project.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Lead_Agency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Organization that is taking the lead on creating/implementing the project.</description>
+        <externalId>false</externalId>
+        <label>Lead Agency</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Potential Projects</relationshipLabel>
+        <relationshipName>Potential_Projects</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Person leading the potential project implementation.</description>
+        <externalId>false</externalId>
+        <label>Lead Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Potential Projects</relationshipLabel>
+        <relationshipName>Potential_Projects_Contact</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Potential_Region__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>UN-specific region where the potential project may be implemented.</description>
+        <externalId>false</externalId>
+        <label>Potential Geographic Region</label>
+        <referenceTo>UN_Regions__c</referenceTo>
+        <relationshipLabel>Project Ideas</relationshipLabel>
+        <relationshipName>Project_Ideas</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Type of program to be implemented.</description>
+        <externalId>false</externalId>
+        <label>Program Type</label>
+        <referenceTo>Cohort__c</referenceTo>
+        <relationshipLabel>Project Ideas</relationshipLabel>
+        <relationshipName>Potential_Program_Types</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UN_Country__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>UN-specific country where the project idea is to be implemented.</description>
+        <externalId>false</externalId>
+        <label>UN Country</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>UN_Country__c.UN_Regions__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.UN_Region__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>UN_Country__c</referenceTo>
+        <relationshipLabel>Project Ideas</relationshipLabel>
+        <relationshipName>Project_Ideas</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UN_Region__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>UN-specific region where the program could be implemented.</description>
+        <externalId>false</externalId>
+        <label>UN Regions</label>
+        <referenceTo>UN_Regions__c</referenceTo>
+        <relationshipLabel>Project Ideas (UN Regions)</relationshipLabel>
+        <relationshipName>Project_Ideas1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Project Idea</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Project Ideas Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Project Ideas</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

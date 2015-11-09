@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>To store defaults for PA form picklists</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Bio_Default_Text__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>To fix IE 11 issues with rendering HTML in inputtextarea fields</inlineHelpText>
+        <label>Bio Default Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cohort__c</fullName>
+        <externalId>false</externalId>
+        <label>Cohort</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Country_Error__c</fullName>
+        <externalId>false</externalId>
+        <label>No Country Error</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Org_Type_Error_Msg__c</fullName>
+        <externalId>false</externalId>
+        <label>No Org Type Error Msg</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Salutation_Error_Msg__c</fullName>
+        <externalId>false</externalId>
+        <label>No Salutation Error Msg</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Picklist_Values__c</fullName>
+        <externalId>false</externalId>
+        <label>Picklist Values</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>PA Defaults</label>
+    <visibility>Public</visibility>
+</CustomObject>

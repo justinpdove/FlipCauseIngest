@@ -1,0 +1,296 @@
+<apex:page Controller="bfc_prideonlineform" showHeader="false" cache="false" sidebar="false" >
+<head>
+<style type="text/css">
+<c:rarecss />    
+</style>
+</head>
+<table width="800px" align="center">
+<tr><td>
+<apex:image url="https://c.na6.content.force.com/servlet/servlet.ImageServer?id=01580000001NeAu&oid=00D300000000eqL&lastMod=1308853599000"/>
+<br/>
+<br/>
+</td></tr>
+<tr><td>
+<apex:outputPanel styleClass="titlePage">Expression of Interest - Rare Pride Program Philippines</apex:outputPanel> 
+<apex:outputPanel styleClass="textBody">
+<p>Dear Prospective Applicant,<br/>
+<br/>
+Conservation ultimately comes down to people – their behaviors toward nature, their beliefs about its value, 
+and their ability to protect it without sacrificing basic life needs. 
+Nowhere are community-based solutions needed more than in the Philippines; 
+and area rich in natural resources, but poverty is also high, making social and environmental change a 
+challenge for hundreds of communities. Rare and its partners in 50+ countries throughout Latin America, 
+the Caribbean, Africa, Asia and the Pacific islands are committed to designing conservation programs that benefit 
+both people and nature – ensuring that change is embraced and sustained. While Rare sources solutions, 
+it does not directly implement outreach at the local level. Changing behaviors requires a nuanced understanding of 
+social and cultural norms and trusted messengers from within each community. Therefore, Rare trains local partners 
+and supports them during all stages of implementing what’s known as a “Pride campaign.” A Pride campaign inspires 
+people to take pride in the species and habitats that make their communities unique, 
+while also giving them alternatives to environmentally destructive behaviors.   
+<br/>
+<br/>Submitting this Expression of Interest  form is required and is the first step in the application 
+process for the Rare Pride Program but does not commit you or your organization to any further action. 
+Once you submit this form, you will receive a confirmation acknowledging that we have received your information. 
+We will contact you two weeks after you receive the notice through an email or phone call to discuss next steps. 
+If you have not heard from us within two weeks, or have additional questions, please contact Brooke Sadowsky, 
+Pride Program Manager at bsadowsky@rareconservation.org.
+ 
+<br/>
+</p>
+<p>We are anticipating the receipt of your expression of interest in running a Pride 
+campaign at your site on or before  <b>July 31st 2011.</b></p>
+</apex:outputPanel> 
+</td></tr>
+</table>
+<apex:form >
+<apex:outputPanel rendered="{!showconfirmation}">
+<table width="800px" align="center">
+<tr><td>
+<b>Confirmation: {!pcasenumber.casenumber}</b>
+<p>Thank you for submitting your Expression of Interest to Rare Pride. We will be in touch soon! 
+Please contact Brooke Sadowsky at bsadowsky@rareconservation.org if you have any questions 
+regarding your Expression of Interest. </p>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!!showconfirmation}">
+<table width="800px" align="center">
+<apex:actionRegion >
+<tr><td colspan="2">
+<p>* Required Fields </p>
+<apex:messages />
+</td></tr>
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+{!$Label.PA_Contact_Information}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel> 
+</td></tr>
+<tr><td colspan="2">
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Salutation}"/>
+
+<apex:selectList size="1" value="{!pcontact.Salutation}">
+<apex:selectOptions value="{!Salutations}"/>
+</apex:selectList>
+
+<apex:outputLabel escape="false" styleClass="titleBlue12" value="{!$Label.PA_First_Name}"/>
+<apex:inputField required="true" value="{!pcontact.FirstName}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Last_Name}"/>
+<apex:inputField value="{!pcontact.LastName}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Title}"/>
+<apex:inputField required="true" value="{!pcontact.Title}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Phone}"/>
+<apex:inputField required="true" value="{!pcontact.Phone}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Email}"/>
+<apex:inputField required="true" value="{!pcontact.Email}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Street}"/>
+<apex:inputField required="true" value="{!pcontact.MailingStreet}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_City}"/>
+<apex:inputField required="true" value="{!pcontact.MailingCity}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_State}"/>
+<apex:inputField required="true" value="{!pcontact.MailingState}"/>
+
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Country}"/>
+<apex:selectList size="1" value="{!pcontact.MailingCountry}">
+<apex:selectOptions value="{!Countries}"/>
+</apex:selectList>
+
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Zip}"/>
+<apex:inputField required="true" value="{!pcontact.MailingPostalCode}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_How_Learn_About_Pride}"/>
+<apex:inputField required="true" value="{!pcontact.How_Did_You_Learn_about_Rare_Rare_Pride__c}"/>
+<apex:outputLabel escape="false" styleClass="titleBlue12" value="{!$Label.PA_Other_Specify}"/>
+<apex:inputField value="{!pcontact.If_other_please_specify__c}"/>
+</apex:panelGrid>
+</td></tr>
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+&nbsp;<br/>
+{!$Label.PA_Org_Header}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel> 
+</td></tr>
+<tr><td colspan="2">
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Name}"/>
+<apex:inputField value="{!paccount.Name}"/>
+<apex:outputLabel escape="false" styleClass="titleBlue12" value="{!$Label.PA_Org_Website}"/>
+<apex:inputField value="{!paccount.website}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Type}"/>
+
+<apex:selectList size="1" value="{!paccount.Segment__c}">
+<apex:selectOptions value="{!OrgTypes}"/>
+</apex:selectList>
+
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Number_Employees}"/>
+<apex:inputField required="true" value="{!paccount.NumberOfEmployees}"/>
+<apex:outputLabel escape="false" styleClass="titleBlue12" value="{!$Label.PA_Org_Recent_Budget}"/>
+<apex:inputField value="{!paccount.AnnualRevenue}"/>
+</apex:panelGrid>
+</td></tr>
+</apex:actionRegion>
+
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+&nbsp;<br/>
+{!$Label.PA_Proposed_Pride_Campaign}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel> 
+
+</td></tr>
+<apex:actionRegion >
+<tr><td colspan="2">
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Name_Campaign_Site}"/>
+<apex:inputField required="true" value="{!pcase.Campaign_Site__c}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Number_at_Campaign_Site}"/>
+<apex:inputField required="true" value="{!pcase.Estimated_Number_of_People_at_Site__c}"/>
+
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Completed_Threat_Ranking}"/>
+<apex:inputField required="true" value="{!pcase.Threat_ranking_Complete__c}"/>
+
+</apex:panelGrid>
+<apex:panelGrid >
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Other_Threats}"/>
+<apex:inputField required="true" value="{!pcase.Other_Threats_at_Site__c}"/>
+<br/>
+<br/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.Thematic_Question_1_ph}"/>
+<apex:inputfield required="true" value="{!pcase.Thematic_Question_1__c}" style="width:500px; height:200px"/>
+<br/>
+<br/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.Thematic_Question_2_ph}"/>
+<apex:inputfield required="true" value="{!pcase.Thematic_Question_2__c}" style="width:500px; height:200px"/>
+<br/>
+<br/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.Thematic_Question_3_ph}"/>
+<apex:inputfield required="true" value="{!pcase.Thematic_Question_3__c}" style="width:500px; height:200px"/>
+<br/>
+<br/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.Thematic_Question_4_ph}"/>
+<apex:inputfield required="true" value="{!pcase.Thematic_Question_4__c}" style="width:500px; height:200px"/>
+<br/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_How_Pride_Campaign_Helps_ph}"/>
+<apex:inputfield required="true" value="{!pcase.How_Pride_Address_Thematic_Threat__c}" style="width:500px; height:200px"/>
+<br/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Mitigation_Activities_ph}"/>
+<apex:inputField required="true" value="{!pcase.Barrier_Removal_Activities_at_site_PH2__c}"/>
+
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Other_Specify}"/>
+<apex:inputField required="true" style="width:500px;" value="{!pcase.Barrier_Removal_Activities_Other__c}"/>
+
+
+</apex:panelGrid>
+</td></tr>
+</apex:actionRegion>
+
+
+<tr><td colspan="2">
+<apex:actionRegion >
+<apex:outputPanel styleClass="textheaders" id="condetails">
+&nbsp;<br/>
+<br/>
+{!$Label.PA_CM_Details_ph}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Candidate_Identified_ph}"/>
+<apex:inputField required="true" value="{!pcase.Prospective_CM_Identified__c}">
+<apex:actionSupport event="onchange" action="{!ToggleCon}" rerender="condetails" />
+</apex:inputField>
+</apex:panelGrid>
+
+<apex:panelGrid id="cmpcon1" columns="2" rendered="{!chideshow}">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_CM_First_Name_ph}"/>
+<apex:inputField value="{!cmcontact.FirstName}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_CM_Last_Name_ph}"/>
+<apex:inputtext value="{!cmcontact.LastName}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_CM_Email_ph}"/>
+<apex:inputField value="{!cmcontact.Email}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_CM_Title_ph}"/>
+<apex:inputField value="{!cmcontact.Title}"/>
+<apex:outputLabel escape="false" styleClass="titleBlue12" value="{!$Label.PA_CM_Has_Degree_ph}"/>
+<apex:inputField value="{!cmcontact.Has_BA_degree__c}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_CM_Years_with_Org}"/>
+<apex:inputField value="{!cmcontact.Years_with_Org__c}"/>
+</apex:panelGrid>
+<apex:panelGrid rendered="{!chideshow}">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_CM_Experience}"/>
+<apex:inputField value="{!cmcontact.Campaign_Manager_Bio_L__c}" style="width:500px; height:200px"/>
+</apex:panelGrid>
+
+<apex:panelGrid columns="2" rendered="{!chideshow}">
+<apex:outputLabel for="picklist1" styleClass="titleBlue12" value="{!$Label.PA_Current_Employee}"/>
+<apex:inputField id="picklist1" value="{!pcase.Prospective_CM_Employed_by_LAP__c}">
+<apex:actionSupport event="onchange" action="{!ToggleOrg}" rerender="condetails"/>
+</apex:inputField>
+</apex:panelGrid>
+
+<apex:outputPanel styleClass="textheaders" rendered="{!ahideshow}">
+&nbsp;<br/>
+<br/>
+{!$Label.PA_Org_Header}<br/>
+<br/>
+<apex:outputPanel styleClass="textBody">
+<p>If no, please enter his/her organizational affiliation.</p> <br/>
+</apex:outputPanel>
+</apex:outputPanel>
+<apex:panelGrid id="cmporg1" columns="2" rendered="{!ahideshow}">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Name}"/>
+<apex:inputText value="{!cmaccount.Name}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Website}"/>
+<apex:inputField value="{!cmaccount.website}"/>
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Type}"/>
+<apex:inputField value="{!cmaccount.Segment__c}"/>
+</apex:panelGrid>
+</apex:outputPanel>
+</apex:actionRegion>
+</td></tr>
+
+<apex:actionRegion >
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+&nbsp;<br/>
+<br/>
+{!$Label.PA_Timing_and_Requirements}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel>
+</td></tr>
+
+<tr><td colspan="2">
+<apex:panelGrid >
+Rare offers a two-year training and technical support program for Pride Campaigns. 
+The minimum requirements to participate in the Pride Program is that the applying organization must<br/>
+a) dedicate a Rare Conservation Fellow full-time to the 2-year Pride Program<br/> 
+b) pay salary and benefits for the Rare Conservation Fellow throughout the 2-year period<br/> 
+c) provide transportation to and from the campaign site.<br/>
+</apex:panelGrid>
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="titleBlue12" value="{!$Label.PA_Org_Meet_Requirement}"/>
+<apex:inputField required="true" value="{!pcase.LAP_willing_to_meet_requirements__c}"/>
+</apex:panelGrid>
+</td></tr>
+</apex:actionRegion>
+
+<tr><td colspan="2">
+<apex:outputPanel id="Submit">
+&nbsp;<br/>
+<br/>
+<apex:commandButton value="{!$Label.PA_Submit_Button}" action="{!save}"/>
+<br/>
+</apex:outputPanel>
+</td></tr>
+</table>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

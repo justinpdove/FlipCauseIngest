@@ -1,0 +1,12 @@
+<apex:page >
+<b>Home page for Regional Dashboards</b>
+<p/>
+<br/><a href="/apex/RegionalDashboardUS2010">Georgetown University, USA (English) - February 2010</a>
+<p/>
+<br/><a href="/apex/RegionalDashboardBogor4">Bogor Agricultural University, Indonesia (Bahasa Indonesia)- Bogor 4</a>
+<br/><a href="/apex/RegionalDashboardGuad8">University of Guadalajara, Mexico (Spanish)- Guad 8</a>
+<br/><a href="/apex/RegionalDashboardChina2">Southwest Forestry University, China (Mandarin Chinese)- China 2</a>
+<br/><a href="/apex/RegionalDashboardPEP2">Georgetown University, USA (English) - PEP2</a>
+
+
+</apex:page>

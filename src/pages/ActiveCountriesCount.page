@@ -1,0 +1,10 @@
+<apex:page controller="ActiveCountriesController" sidebar="false" showHeader="false">
+    <apex:form >
+    	<apex:pageBlock id="countries_list">
+        	<apex:pageBlockTable value="{!countries}" var="country">
+        		<apex:column value="{!country}"/>
+    		</apex:pageBlockTable>
+    	</apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

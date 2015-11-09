@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Average_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Completed__c &gt;0,Total_Age__c /   Completed__c,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cohort_to_Date_FY_10__c</fullName>
+        <externalId>false</externalId>
+        <formula>If (
+
+OR(Reference_Name__c = &apos;Fit Assessment&apos;,Reference_Name__c = &apos;EOI&apos;),  
+FY10_Completed__c  + FY10_Ended__c  + FY_10_Current__c, FY10_Completed__c  +  FY_10_Current__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FY10 Cohort to Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cohort_to_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>If (
+
+OR(Reference_Name__c = &apos;Fit Assessment&apos;,Reference_Name__c = &apos;EOI&apos;, Reference_Name__c = &apos;Evaluation&apos;), Completed__c +  Current__c +  Ended__c ,Completed__c +  Current__c
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Records currently in the stage plus records that have successfully exited the stage</inlineHelpText>
+        <label>FY09 Cohort to Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>FY09 Completed</label>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Reporting_Year__c</field>
+            <operation>equals</operation>
+            <value>FY 09</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tracking_Details__c.Tracking__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Current__c</fullName>
+        <externalId>false</externalId>
+        <label>FY09 Current</label>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Current</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Reporting_Year__c</field>
+            <operation>equals</operation>
+            <value>FY 09</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tracking_Details__c.Tracking__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Dash_Cohort_to_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For VF Dashboard Only</inlineHelpText>
+        <label>Dash Cohort to Date</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dash_Completed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For use on Dashboard VF pages</inlineHelpText>
+        <label>Dash Completed</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dash_Current__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For use on Dashboard VF pages</inlineHelpText>
+        <label>Dash Current</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dash_Ended__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For use on Dashboard VF pages</inlineHelpText>
+        <label>Dash Ended</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dash_Table__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show in Dash Table?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Display_Order__c)  &amp;&quot; : &quot; &amp; Name</formula>
+        <label>Display Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ended__c</fullName>
+        <externalId>false</externalId>
+        <label>FY09 Ended</label>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Ended</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Reporting_Year__c</field>
+            <operation>equals</operation>
+            <value>FY 09</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tracking_Details__c.Tracking__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>FY10_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>FY10 Completed</label>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Reporting_Year__c</field>
+            <operation>equals</operation>
+            <value>FY 10</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tracking_Details__c.Tracking__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>FY10_Ended__c</fullName>
+        <externalId>false</externalId>
+        <label>FY10 Ended</label>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Reporting_Year__c</field>
+            <operation>equals</operation>
+            <value>FY 10</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Ended</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tracking_Details__c.Tracking__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>FY_10_Current__c</fullName>
+        <externalId>false</externalId>
+        <label>FY10 Current</label>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Reporting_Year__c</field>
+            <operation>equals</operation>
+            <value>FY 10</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Current</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tracking_Details__c.Tracking__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FY 09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FY 10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FY 11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Name__c</fullName>
+        <description>To enable easy lookup against stage names, we can store the related lead/application stage in this field</description>
+        <externalId>false</externalId>
+        <label>Reference Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Target_FY_10__c</fullName>
+        <externalId>false</externalId>
+        <label>Target FY 10</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Target</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Age__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Age</label>
+        <summarizedField>Tracking_Details__c.Age__c</summarizedField>
+        <summaryFilterItems>
+            <field>Tracking_Details__c.Age__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tracking_Details__c.Tracking__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Completed__c</fullName>
+        <externalId>false</externalId>
+        <formula>Completed__c  +  Ended__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Completed + Ended Records</inlineHelpText>
+        <label>Total Completed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Tracking</label>
+    <listViews>
+        <fullName>All_Stages</fullName>
+        <columns>NAME</columns>
+        <columns>Current__c</columns>
+        <columns>Cohort_to_Date__c</columns>
+        <columns>Completed__c</columns>
+        <columns>Ended__c</columns>
+        <columns>Target__c</columns>
+        <columns>Target_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Stages</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>DashBoard_Stages</fullName>
+        <columns>NAME</columns>
+        <columns>Display_Stage__c</columns>
+        <columns>Current__c</columns>
+        <columns>Completed__c</columns>
+        <columns>Cohort_to_Date__c</columns>
+        <columns>Ended__c</columns>
+        <columns>Target__c</columns>
+        <columns>Target_Date__c</columns>
+        <columns>Dash_Table__c</columns>
+        <columns>Target_FY_10__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Display_Order__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>DashBoard Stages</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Leads</fullName>
+        <columns>NAME</columns>
+        <columns>Current__c</columns>
+        <columns>Completed__c</columns>
+        <columns>Cohort_to_Date__c</columns>
+        <columns>Target__c</columns>
+        <columns>Target_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Reference_Name__c</field>
+            <operation>equals</operation>
+            <value>EOI,Pride Lead</value>
+        </filters>
+        <label>Leads</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Stage</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Tracking</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Current__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Completed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Cohort_to_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Ended__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Target__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Target_Date__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

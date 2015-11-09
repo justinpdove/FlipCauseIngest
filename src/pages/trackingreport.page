@@ -1,0 +1,47 @@
+<apex:page standardController="Tracking__c" recordSetVar="tracking" tabstyle="Tracking__c" sidebar="false">
+<apex:stylesheet value="{!$Resource.RareCSS}" />
+
+  <apex:pageBlock >
+  <apex:form id="theForm">
+    <apex:panelGrid columns="2">
+      <apex:outputLabel value="View:"/>
+      <apex:selectList value="{!filterId}" size="1">
+        <apex:actionSupport event="onchange" rerender="list"/>
+        <apex:selectOptions value="{!listviewoptions}"/>
+      </apex:selectList>
+    </apex:panelGrid>
+    <apex:pageBlockSection >
+    <apex:dataTable styleClass="pageBlockTable" cellpadding="1" border="1" value="{!tracking}" var="t" id="list">
+    <apex:column > 
+     <apex:facet name="header">Stage</apex:facet>
+    {!t.Display_Stage__c}
+    </apex:column> 
+    <apex:column >
+    <apex:facet name="header">Current</apex:facet>
+     <apex:outputfield value="{!t.Current__c}"/>
+    </apex:column> 
+    <apex:column >
+    <apex:facet name="header">Complete</apex:facet>
+<apex:outputfield value="{!t.Completed__c}"/>
+    </apex:column> 
+    <apex:column >
+    <apex:facet name="header">Ended</apex:facet>
+<apex:outputfield value="{!t.Ended__c}"/>
+    </apex:column> 
+    <apex:column >
+    <apex:facet name="header">Cohort<br/>to Date</apex:facet>
+ <apex:outputfield value="{!t.Cohort_to_Date__c}"/>
+    </apex:column> 
+     <apex:column >
+    <apex:facet name="header">Target</apex:facet>
+<apex:outputfield value="{!t.Target__c}"/>
+    </apex:column> 
+        <apex:column >
+    <apex:facet name="header">Target<br/>Date</apex:facet>
+<apex:outputfield value="{!t.Target_Date__c}"/>
+    </apex:column> 
+    </apex:dataTable>
+    </apex:pageBlockSection>
+  </apex:form> 
+  </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,229 @@
+<apex:page StandardController="Lead" extensions="LeadExtension" showHeader="false" sidebar="false" cache="false">
+<head>
+<style type="text/css">
+<c:rarecss />    
+</style>
+</head>
+<table width="800px" align="center">
+<tr><td>
+<apex:image url="https://na6.salesforce.com/servlet/servlet.ImageServer?id=015800000012uHZ&oid=00D300000000eqL&lastMod=1270761373000"/>
+<br/>
+<br/>
+</td></tr>
+<tr><td>
+<apex:outputPanel styleClass="titlePage">Expression of Interest in RARE Program</apex:outputPanel> 
+<apex:outputPanel styleClass="textBody">
+<p>Dear Candidate:<br/>
+<br/>
+Thank you for your interest in Rare and the Pride program. We appreciate you taking the time to help us
+get to know your organization better.<br/><br/>
+
+Rare is currently developing the next Pride program. Submitting this form will help us determine interest
+around certain geographies, threats, habitats, solutions, and conservation targets, and does not commit
+you or your organization to any further action. Please check back here soon for more information about
+future programs and criteria for participation.
+<br/><br/>
+Once you submit this form, you will receive an email alerting you that we have received your
+information. If you’d like further information or have additional questions, please contact Julia Darcey at jdarcey@rare.org.</p>
+
+<br/>
+</apex:outputPanel> 
+</td></tr>
+</table>
+<apex:form >
+<apex:outputPanel rendered="{!showconfirmation}">
+<table width="800px" align="center">
+<tr><td>
+<b>Confirmation: </b>
+<p> Thank you, we have received your information. </p>
+</td></tr>
+</table>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!!showconfirmation}">
+<table width="800px" align="center">
+<tr><td colspan="2">
+<p>*  Required Fields  </p>
+<apex:messages styleClass="textErrors"/>
+</td></tr>
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+{!$Label.PA_Contact_Information}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel> 
+</td></tr>
+<tr><td colspan="2">
+<apex:panelGrid columns="2">
+
+<apex:outputLabel escape="false" styleClass="textBody" value="{!$Label.PA_First_Name}"/>
+<apex:inputField value="{!lead.FirstName}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Last_Name}"/>
+<apex:inputField value="{!lead.LastName}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Title}"/>
+<apex:inputField value="{!lead.Title}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Phone}"/>
+<apex:inputField value="{!lead.Phone}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Email}"/>
+<apex:inputField value="{!lead.Email}"/>
+
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Street}"/>
+<apex:inputField required="true" value="{!lead.Street}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_City}"/>
+<apex:inputField required="true" value="{!lead.City}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_State}"/>
+<apex:inputField required="true" value="{!lead.State}"/>
+
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Country}"/>
+<apex:selectList size="1" value="{!lead.Country}">
+<apex:selectOptions value="{!Countries}"/>
+</apex:selectList>
+
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Zip}"/>
+<apex:inputField required="true" value="{!lead.PostalCode}"/>
+
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_How_Learn_About_Pride}"/>
+<apex:inputField value="{!lead.How_did_you_learn_about_Rare_Rare_Pride__c}"/>
+
+<apex:outputLabel escape="false" styleClass="textBody" value="{!$Label.PA_Other_Specify}"/>
+<apex:inputField value="{!lead.If_other_please_specify__c}"/>
+
+</apex:panelGrid>
+
+
+</td></tr>
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+&nbsp;<br/>
+{!$Label.PA_Org_Header}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel> 
+</td></tr>
+<tr><td colspan="2">
+
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Org_Name}"/>
+<apex:inputField value="{!lead.Company}"/>
+
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Org_Type}"/>
+<apex:selectList size="1" value="{!lead.Company_Type__c}">
+<apex:selectOptions value="{!OrgTypes}"/>
+</apex:selectList>
+
+
+<apex:outputLabel escape="false" styleClass="textBody" value="{!$Label.PA_Org_Website}"/>
+<apex:inputField value="{!lead.Website}"/>
+
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Number_Employees}"/>
+<apex:inputField value="{!lead.Number_of_Employees__c}"/>
+
+<apex:outputLabel escape="false" styleClass="textBody" value="{!$Label.PA_Org_Recent_Budget}"/>
+<apex:inputField value="{!lead.Most_Recent_Organization_Budget_USD__c}"/>
+</apex:panelGrid>
+
+</td></tr>
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+&nbsp;<br/>
+{!$Label.PA_Potential_Pride_Campaign}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel> 
+</td></tr>
+
+<tr><td colspan="2">
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Potential_Site_Name}"/>
+<apex:inputField value="{!lead.Name_of_Proposed_Site__c}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Number_at_Campaign_Site}"/>
+<apex:inputField value="{!lead.Estimated_Number_of_People_In_Around_Sit__c}"/>
+</apex:panelGrid>
+<apex:panelGrid >
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Long_Term_Strategy}"/>
+<apex:inputField style="width:500px; height:125px" value="{!lead.Describe_your_long_term_strategy__c}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Top_three_threats_EN}"/>
+<apex:inputField value="{!lead.Select_top_three_threats_to_that_site__c}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_How_Pride_Campaign_Helps}"/>
+<apex:inputField style="width:500px; height:125px" value="{!lead.How_would_Pride_address_those_threats__c}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Replicable_Alternative}"/>
+<apex:inputField value="{!lead.Alternative_to_destructive_behaviors__c}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Please_Describe}"/>
+<apex:inputField style="width:500px; height:125px" value="{!lead.If_yes_please_describe__c}"/>
+</apex:panelGrid>
+<apex:panelGrid >
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Activities_to_Mitigate}"/>
+<apex:inputField value="{!lead.Done_acitvities_to_mitigate_top_threat__c}"/>
+
+</apex:panelGrid>
+</td></tr>
+
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+&nbsp;<br/>
+<br/>
+{!$Label.PA_Timing_and_Requirements}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel>
+</td></tr>
+
+<tr><td colspan="2">
+<p>
+The Rare Pride training program consists of an intensive two-year period of training and technical
+support. The minimum requirements to participate in the Pride Program is that the applying
+organization must a) dedicate a Campaign Manager full-time to the 2-year Pride Program b) pay salary
+and benefits for the Campaign Manager throughout the 2-year period c) provide office space and local
+transportation to and from the campaign site.
+</p>
+<apex:panelGrid columns="2">
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Org_Meet_Requirement}"/>
+<apex:inputField value="{!lead.What_resources_can_your_agency_commit__c}"/>
+
+</apex:panelGrid>
+</td></tr>
+
+<tr><td colspan="2">
+<apex:outputPanel styleClass="textheaders">
+&nbsp;<br/>
+<br/>
+{!$Label.PA_Rare_Social_Marketing_Training}<br/>
+___________________________________________
+&nbsp;<br/>
+<br/>
+</apex:outputPanel>
+</td></tr>
+
+<tr><td colspan="2">
+<apex:panelGrid columns="2">
+
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Interested_in_social_marketing_workshop}"/>
+<apex:inputField value="{!lead.Interested_in_social_marketing_workshop__c}"/>
+<apex:outputLabel styleClass="textBody" value="{!$Label.PA_Soc_Marketing_Training_w_o_P_Campaign}"/>
+<apex:inputField value="{!lead.Soc_Marketing_Training_w_o_P_Campaign__c}"/>
+
+
+</apex:panelGrid>
+</td></tr>
+
+
+<tr><td colspan="2">
+<apex:panelGrid >
+
+</apex:panelGrid>
+</td></tr>
+<tr><td colspan="2">
+<apex:outputPanel id="Submit">
+&nbsp;<br/>
+<br/>
+<apex:commandButton styleclass="btn" value="{!$Label.PA_Submit_Button}" action="{!save}"/>
+<br/><br/>
+</apex:outputPanel>
+</td></tr>
+</table>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

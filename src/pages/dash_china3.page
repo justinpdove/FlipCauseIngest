@@ -1,0 +1,3 @@
+<apex:page sidebar="false">
+<c:cohortdash dashcohort="China 3 Agriculture"/>            
+</apex:page>

@@ -1,0 +1,87 @@
+<apex:page standardController="Opportunity" extensions="bfc_updateprojectfunding">
+<apex:sectionHeader title="Update Projects for {!Opportunity.Name}"/>
+
+
+<h2>
+<apex:outputLabel >Expected Revenue: </apex:outputLabel>
+<apex:outputField value="{!Opportunity.ExpectedRevenue}"/>
+</h2>
+<apex:messages style="color:red;" />
+
+
+<apex:form >
+<apex:actionFunction name="recalc" action="{!reCalc}" rerender="updategrid"/>
+
+
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton action="{!newpf}" value="New Record"/>
+<apex:commandButton action="{!updatepf}" value="Update Records"/>
+<apex:commandButton action="{!cancel}" value="Return to Funding Record"/>
+
+</apex:pageBlockButtons>
+
+<apex:pageBlockTable id="updategrid" value="{!cPFunds}" var="pfu">
+
+<apex:column >
+
+<apex:facet name="header">
+Delete?
+</apex:facet>
+
+<apex:inputCheckbox value="{!pfu.pfdelete}"/>
+</apex:column>
+
+<apex:column value="{!pfu.pf.name}"/>
+
+<apex:column >
+<apex:facet name="header">
+Project
+</apex:facet>
+
+<apex:inputField value="{!pfu.pf.Project__c}"/>
+</apex:column>
+
+<apex:column >
+<apex:facet name="header">
+Allocation %
+</apex:facet>
+<apex:facet name="footer">
+{!pctotal}
+</apex:facet>
+
+<apex:inputField required="true" value="{!pfu.pf.Allocation__c}"/>
+</apex:column>
+
+<apex:column >
+
+<apex:facet name="header">
+Amount Allocated
+</apex:facet>
+
+<apex:outputField value="{!pfu.pf.Allocated_Amount_Calc__c}"/>
+</apex:column>
+
+<apex:column >
+<apex:facet name="header">
+Allocation Year
+</apex:facet>
+
+<apex:inputField required="true"  value="{!pfu.pf.Allocated_To__c}"/>
+</apex:column>
+
+<apex:column >
+<apex:facet name="header">
+Payment Category
+</apex:facet>
+
+<apex:inputField required="true"  value="{!pfu.pf.Payment_Category__c}"/>
+</apex:column>
+
+</apex:pageBlockTable>
+
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

@@ -1,0 +1,38 @@
+<apex:page standardController="RARE_Campaign__c" extensions="SetupNewScoreCardExtension">
+<apex:sectionHeader subtitle="Setup New Scorecard for {!RARE_Campaign__c.Name}"/>
+<apex:form >
+
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton value="Create Scorecard" action="{!createScorecard}"/>
+<apex:commandButton value="Send Scorecard" action="{!SendScorecard}"/>
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+
+</apex:pageBlockButtons>
+
+<apex:pageBlockTable value="{!NewScoreCardAnswers}" var="sca">
+<apex:column headerValue="Include?">
+<apeX:inputCheckbox value="{!sca.bInclude}"/>
+</apex:column>
+
+<apex:column headerValue="Question">
+<apex:inputField style="width:20px;" value="{!sca.sa.Display_Order__c}"/>
+</apex:column>
+
+
+<apex:column headerValue="Question">
+{!sca.saquestion.Name}
+</apex:column>
+
+
+<apex:column headerValue="Question">
+{!sca.saquestion.Question_Text__c}
+</apex:column>
+
+
+
+</apex:pageBlockTable>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

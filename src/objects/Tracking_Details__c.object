@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>Exit_Date__c - Entry_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Cohort__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(Len( Pride_Application__c) &gt;0, 
+Text( Pride_Application__r.Cohort__c ),  
+if(Len( Pride_Lead__c) &gt;0, 
+Pride_Lead__r.Cohort__c, 
+Contact__r.Cohort__c )
+)</formula>
+        <label>Cohort</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Progress__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case (Pride_Application__r.Status,
+&quot;Accepted&quot;,&quot;Completed - Accepted&quot;,
+&quot;Deferred&quot;,&quot;Completed - Deferred&quot;,
+&quot;Rejected&quot;,&quot;Completed - Rejected&quot;,
+&quot;Closed Accepted&quot;,&quot;Completed - Accepted&quot;,
+&quot;Closed Rejected&quot;, &quot;Completed - Rejected&quot;,
+&quot;In Progress&quot;)</formula>
+        <label>Applicant Progress</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Recommendationt__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant Recommendation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Len( Pride_Application__c) &gt;0,  
+Case(Pride_Application__r.Status,
+&quot;Fit Assessment&quot;,&quot;Fit Assessment&quot;,
+&quot;Application&quot;,&quot;Application&quot;,
+&quot;Interviews&quot;,&quot;Interviews&quot;,
+&quot;Evaluation&quot;,&quot;Evaluation&quot;,
+&quot;Recommended for Cohort&quot;,&quot;Recommended for Cohort&quot;,
+&quot;Accepted&quot;,&quot;Accepted&quot;,
+&quot;Deferred&quot;,&quot;Deferred&quot;,
+&quot;Rejected&quot;,&quot;Rejected&quot;,
+&quot;Closed Accepted&quot;,&quot;Closed Accepted&quot;,
+&quot;Closed Rejected&quot;,&quot;Closed Rejected&quot;,
+&quot;&quot;)
+,&quot;&quot;)</formula>
+        <label>Applicant Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>For historical reporting only</inlineHelpText>
+        <label>Linked Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Tracking Details</relationshipLabel>
+        <relationshipName>Tracking_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exit_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Exit Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Key_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Converted_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pride_Lead__r.ConvertedDate</formula>
+        <label>Lead Converted Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Status_Tracking__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Status Tracking</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( Pride_Lead__r.IsConverted = false,&quot;Active&quot;,&quot;Complete&quot;)</formula>
+        <label>Lead Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Days_in_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL( Exit_Date__c ) ,TODAY() -  Entry_Date__c, Exit_Date__c - Entry_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days since Application/Lead entered this stage</inlineHelpText>
+        <label>Number of Days in Stage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pride_Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pride Applicant</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Tracking Details</relationshipLabel>
+        <relationshipName>Tracking_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pride_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pride Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Tracking Details</relationshipLabel>
+        <relationshipName>Tracking_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reporting_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Current</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Previous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Next</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FY 09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FY 10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FY 11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+
+NOT((ISNULL(Exit_Date__c))) , &quot;Completed&quot;,
+
+If (len( Key_Status__c ) &gt; 0, 
+
+if (LEN(Application_Recommendationt__c) = 0,
+
+&quot;Current&quot;,
+
+Case(Application_Recommendationt__c,
+&quot;Recommended&quot;,&quot;Current&quot;,
+&quot;Deferred&quot;,&quot;Ended&quot;,
+&quot;Rejected&quot;,&quot;Ended&quot;,
+&quot;Current&quot;)),
+
+Case( Lead_Status_Tracking__c ,
+&quot;EOI Not Screened&quot;,&quot;Current&quot;,
+&quot;Qualified&quot;,&quot;Complete&quot;,
+&quot;Unqualified&quot;,&quot;Ended&quot;,
+&quot;Contacted&quot;,&quot;Current&quot;,
+&quot;Open&quot;,&quot;Current&quot;,
+&quot;Current&quot;) )
+
+)</formula>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrackingKey__c</fullName>
+        <externalId>false</externalId>
+        <formula>Key_Status__c  &amp;  Pride_Application__c</formula>
+        <label>TrackingKey</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tracking__c</fullName>
+        <externalId>false</externalId>
+        <label>Tracking</label>
+        <referenceTo>Tracking__c</referenceTo>
+        <relationshipLabel>Tracking Details</relationshipLabel>
+        <relationshipName>Tracking_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Workflow_update__c</fullName>
+        <externalId>false</externalId>
+        <label>Workflow update</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Tracking Detail</label>
+    <listViews>
+        <fullName>Current_for_Bogor_4</fullName>
+        <columns>NAME</columns>
+        <columns>Entry_Date__c</columns>
+        <columns>Exit_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Pride_Application__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Cohort__c</field>
+            <operation>equals</operation>
+            <value>Bogor 4</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Current,Cohort to Date</value>
+        </filters>
+        <label>Bogor 4</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Guad_8</fullName>
+        <columns>NAME</columns>
+        <columns>Entry_Date__c</columns>
+        <columns>Exit_Date__c</columns>
+        <columns>Pride_Application__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Cohort__c</field>
+            <operation>equals</operation>
+            <value>Guad 8</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Current,Completed</value>
+        </filters>
+        <label>Guad 8</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>TD-{00000}</displayFormat>
+        <label>Tracking Details Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Tracking Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

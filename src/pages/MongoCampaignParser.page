@@ -1,0 +1,41 @@
+<apex:page standardController="RARE_Campaign__c" extensions="MongoCampaignParserController" action="{!parseData}" >
+<apex:form >
+
+<apex:pageMessages />
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton action="{!parseData}" value="ParseData"/>
+<apex:commandButton action="{!ReturntotRC}" value="Return to Campaign"/>
+</apex:pageBlockButtons>
+
+<apex:pageBlockSection >
+
+<apex:pageblockSectionItem >
+<apex:outputLabel >MDA Success?</apex:outputLabel>
+<apex:outputText value="{!mda.bSuccess}"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:outputLabel >Parse Success?</apex:outputLabel>
+<apex:outputText value="{!cpct.bSuccess}"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:outputLabel >Campaign</apex:outputLabel>
+<apex:outputText value="{!RARE_Campaign__c.Name}"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:outputLabel >Status</apex:outputLabel>
+<apex:outputText value="{!RARE_Campaign__c.Status__c}"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:outputLabel >Code</apex:outputLabel>
+<apex:outputText value="{!RARE_Campaign__c.Project_Code__c}"/>
+</apex:pageblockSectionItem>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

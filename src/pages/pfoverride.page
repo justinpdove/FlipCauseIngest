@@ -1,0 +1,3 @@
+<apex:page standardController="Project_Funding__c" extensions="bfc_pfoverride" action="{!oredirect}">
+{!Project_Funding__c.Funding__c}
+</apex:page>

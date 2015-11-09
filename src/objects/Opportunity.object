@@ -1,0 +1,3756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddInfluence</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>Individual Donation</fullName>
+        <description>Stages and probabilities specific to individual donations.</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Pursued</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Public Funding</fullName>
+        <description>Stages and probabilities specific to public funding opportunities.</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Pursued</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>World Bank Opportunity</fullName>
+        <description>Opportunities specific to World Bank guidelines and specifications.</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>test</fullName>
+        <description>test</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Pursued</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>test1</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Pursued</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>testtest</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Amount_Received_FY09__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of payments with status of received in 2009</inlineHelpText>
+        <label>Amount Received FY09</label>
+        <summarizedField>Payments__c.Payment_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Payments__c.Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Received</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Payments__c.Payment_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>9/30/2008</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Payments__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Received_Old__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all Payments</inlineHelpText>
+        <label>Amount Received_Old</label>
+        <summarizedField>Old_Payments__c.Payment_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Old_Payments__c.Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Received</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Old_Payments__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Received__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of payments with status of received</inlineHelpText>
+        <label>Amount Received</label>
+        <summarizedField>Payments__c.Payment_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Payments__c.Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Received</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Payments__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Amount_same_as_proposal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Amount same as proposal?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ask_Amount__c</fullName>
+        <description>Actual amount solicited in proposal or ask.</description>
+        <externalId>false</externalId>
+        <label>Ask Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CloseDate</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Concept_Due__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date the concept for the proposal is due.</inlineHelpText>
+        <label>Concept Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Funding</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContractId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Standing__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Standing</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year_Strategy__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Year Strategy</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Data_Quality_Score__c =100,&quot;All Opportunity Details Captured&quot;, &quot;Missing: &quot;&amp;IF( ISPICKVAL( Type ,&quot;&quot;),&quot;Type, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF(LEN( TEXT(MONTH(CloseDate))) = 0, &quot;Close Date, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( Amount &lt;= 0, &quot;Amount, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( ISPICKVAL( LeadSource,&quot;&quot;), &quot;Lead Source, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(NextStep)=0, &quot;Next Steps&quot;,&quot;&quot;))</formula>
+        <label>Data Quality Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Type,&quot;&quot;), 0,20) + IF( LEN( TEXT(MONTH(CloseDate))) = 0, 0,20) + IF( Amount &lt;= 0, 0,20) + IF( ISPICKVAL( LeadSource,&quot;&quot;), 0,20) + IF( LEN(NextStep)=0, 0,20)</formula>
+        <label>Data Quality Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Awarded__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date Rare was notified the grant/gift was being awarded.</inlineHelpText>
+        <label>Date Awarded</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Decision_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date the organization/company/individual is expected to make a decision whether or not to fund this project.</inlineHelpText>
+        <label>Decision Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Details</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Final_Financial_Report_Send_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Financial Report Send Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Financial_Reporting_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Financial Reporting Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Programmatic_Report_Send_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Programmatic Report Send Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Programmatic_Reporting_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Programmatic Reporting Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Reporting_Date_Final__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Reporting Date Final</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Reporting_Date_Interim__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Reporting Date Interim</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Reporting_Requirements__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Reporting Requirements</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Actuals Against Approved Budget</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Actuals Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Narrative Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Foundation_Feedback_Survey_Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Foundation Feedback Survey Complete</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Funding_Close_FY__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR(CloseDate+92))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Close FY</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Funding_update__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Funding update</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Gift_Allocated_to_Segment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose segment this gift should be counted under for board report</inlineHelpText>
+        <label>Gift Allocated to Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NGO/Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Revenue (ex. trip payment)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Grant_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Manager_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Manager Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Number</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Payment Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Single Payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multiple Payments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reimbursements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Summary</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Term (months)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Grant_amount_same_as_proposal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Grant amount same as proposal?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>If_amount_not_same_as_proposal_describe__c</fullName>
+        <externalId>false</externalId>
+        <label>If amount not same as proposal, describe</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>If_other_requirements_describe__c</fullName>
+        <externalId>false</externalId>
+        <label>If other requirements, describe</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>In_Kind_Donation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>In Kind Donation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Include_in_Forecast__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Do you want this opportunity included in forecast reports?</inlineHelpText>
+        <label>Include in Forecast</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Financial_Report_Send_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Financial Report Send Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Financial_Reporting_Date_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Financial Reporting Date #2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Financial_Reporting_Date_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Financial Reporting Date #3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Financial_Reporting_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Financial Reporting Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Programmatic_Report_Send_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Programmatic Report Send Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Programmatic_Reporting_Date_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Programmatic Reporting Date #2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Programmatic_Reporting_Date_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Programmatic Reporting Date #3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Programmatic_Reporting_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Programmatic Reporting Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interim_Reporting_Date_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Interim Reporting Date #2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IsPrivate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Last_Report_Submission_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Report Submission Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lecture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Road Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Footer Signup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subscribe Page</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Market_for_Individual_Donors__c</fullName>
+        <description>Individual Giving Markets</description>
+        <externalId>false</externalId>
+        <label>Market (for Individual Donors)</label>
+        <picklist>
+            <controllingField>Gift_Allocated_to_Segment__c</controllingField>
+            <picklistValues>
+                <fullName>Boston (NH, MA, ME, RI, VT)</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>California</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chicago (IL, WI)</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New York (CT, PA, NJ, NY)</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Washington DC (DC, MD, VA)</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OTHER US (East Coast, Midwest, and South)</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OTHER US (Western States)</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INTERNATIONAL</fullName>
+                <controllingFieldValues>Individual</controllingFieldValues>
+                <controllingFieldValues>Major Donor</controllingFieldValues>
+                <controllingFieldValues>Trustee</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Marketing Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Proposals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Most_Recent_Payment_Date__c</fullName>
+        <description>The most recent payment date from the Payments related list.</description>
+        <externalId>false</externalId>
+        <label>Most Recent Payment Date</label>
+        <summarizedField>Payments__c.Payment_Date__c</summarizedField>
+        <summaryForeignKey>Payments__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Needs_Manual_Cleanup__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Needs Manual Cleanup</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_Activity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Field indicates if the activity in the proposed grant is a new activity. If so, a budget amendment will be required - Check if YES</inlineHelpText>
+        <label>New Activity</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NextStep</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Num_Installments__c</fullName>
+        <description>Number of payments for a particular funding record.</description>
+        <externalId>false</externalId>
+        <label>Num Installments</label>
+        <summaryForeignKey>Payments__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Years__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Years</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Old_Grant_Record__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Old Grant Record</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Proposals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Realized__c</fullName>
+        <description>Will return true if the amount received equals the gift amount.</description>
+        <externalId>false</externalId>
+        <formula>IF(Amount_Received__c  =  Amount, True, False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Realized?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payee_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Payee Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Same Level</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wire Transfer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stock</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Kind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PayPal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Expected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payments__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Payments</label>
+        <referenceTo>Old_Payments__c</referenceTo>
+        <relationshipLabel>Financials</relationshipLabel>
+        <relationshipName>Proposals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pledge_Made_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Pledge Made Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pricebook2Id</fullName>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Probability</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Programmatic_Reporting_Date_Final__c</fullName>
+        <externalId>false</externalId>
+        <label>Programmatic Reporting Date Final</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Programmatic_Reporting_Date_Interim__c</fullName>
+        <externalId>false</externalId>
+        <label>Programmatic Reporting Date Interim</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Programmatic_Reporting_Date_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Programmatic Reporting Date Other</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Projected_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Amount  *  Probability</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Proposal_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the proposal deadline</inlineHelpText>
+        <label>Proposal Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Proposal_Mail_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date you actually sent the report in.</inlineHelpText>
+        <label>Submission Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Proposal_Review_Deadline__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the proposal must be reviewed by befor submission</inlineHelpText>
+        <label>Proposal Review Deadline</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>RARE_Grant_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>RARE Grant Manager</label>
+        <length>64</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RARE_Project_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>RARE Project Manager</label>
+        <length>55</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rejection_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejection Notes</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Rejection_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejection Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Programmatic Fit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requires_Board_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Requires Board Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Restriction_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Restriction Notes</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Restrictions__c</fullName>
+        <externalId>false</externalId>
+        <label>Restrictions</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Unrestricted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Time Restriction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Program Restriction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project Restriction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project Group Restriction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expense Type Restriction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Restriction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Matching Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Federal Grant Restrictions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Solicitation_Response__c</fullName>
+        <externalId>false</externalId>
+        <label>Solicitation Response</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web Site</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Earthshare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Source_Payment_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Payment ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Special_Terms__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Terms</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>StageName</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Closed Won</fullName>
+                <closed>true</closed>
+                <default>false</default>
+                <forecastCategory>Closed</forecastCategory>
+                <probability>100</probability>
+                <won>true</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Lost</fullName>
+                <closed>true</closed>
+                <default>false</default>
+                <forecastCategory>Omitted</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Pursued</fullName>
+                <closed>true</closed>
+                <default>false</default>
+                <forecastCategory>Omitted</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead</fullName>
+                <closed>false</closed>
+                <default>false</default>
+                <description>Conversations where there is an idea, opportunity or funding window targeted, but not a concrete concept yet under discussion.</description>
+                <forecastCategory>Omitted</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concept in Progress</fullName>
+                <closed>false</closed>
+                <default>false</default>
+                <description>A concept is in progress when we have identified a clear path to funding where Rare’s priorities align with the donors and we know where the funding would come from.</description>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concept Submitted</fullName>
+                <closed>false</closed>
+                <default>false</default>
+                <description>A concept has been submitted to the donor for consideration or technical input has been provided to a noncompetitive opportunity.</description>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Submission_Ask_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission/Ask Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Target__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Target</label>
+        <referenceTo>Target__c</referenceTo>
+        <relationshipLabel>Proposals</relationshipLabel>
+        <relationshipName>Proposals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Time_Expense_Type_or_Other_Restrictions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to explain any grant restrictions other than Program/Project restrictions, such as:  
+1)Time restriction
+2)Expense Type Restriction below Project Code 
+3)Required matching amount and restrictions
+4)Applicable US federal grant restrictions</inlineHelpText>
+        <label>Time, Expense-Type or Other Restrictions</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Top_Five_Moves_to_Solicitation__c</fullName>
+        <externalId>false</externalId>
+        <label>Top Five Moves to Solicitation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalOpportunityQuantity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Total_Awarded__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Awarded</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Payments_Old__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Payments - Old</label>
+        <summarizedField>Old_Payments__c.Payment_Amount__c</summarizedField>
+        <summaryForeignKey>Old_Payments__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Payments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all payments expected and received</inlineHelpText>
+        <label>Total Payments</label>
+        <summarizedField>Payments__c.Payment_Amount__c</summarizedField>
+        <summaryForeignKey>Payments__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decrease</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>VP_Finance_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>VP Finance Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VP_Finance_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>VP Finance Name</label>
+        <length>128</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VP_Programs_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>VP Programs Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VP_Programs_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>VP Programs Name</label>
+        <length>128</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>geopointe__Geocode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to the Geocode object holding all of mapping information for the record.</inlineHelpText>
+        <label>Geocode</label>
+        <referenceTo>geopointe__Geocode__c</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>AllProposals</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Proposals</label>
+    </listViews>
+    <listViews>
+        <fullName>ClosingNextMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <label>Closing Next Month</label>
+    </listViews>
+    <listViews>
+        <fullName>ClosingThisMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Closing This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>CreatedNewfromGrantRecords</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>2/12/2008 12:00 AM</value>
+        </filters>
+        <label>Created New from Grant Records</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Funding_Owned_by_Elan</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Proposal_Due_Date__c</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <operation>equals</operation>
+            <value>elan</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>equals</operation>
+            <value>Proposal Lead,In Progress,Submission/Ask</value>
+        </filters>
+        <label>Funding Owned by Elan</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>IndividualDonations</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.IndividualDonation</value>
+        </filters>
+        <label>Individual Donations</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>MajorDonorFunding</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>equals</operation>
+            <value>Major Donor</value>
+        </filters>
+        <label>Major Donor Funding</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.PROBABILITY</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>Gift_Allocated_to_Segment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Won</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.WON</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Won</label>
+        <language>en_US</language>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>IndividualDonation</fullName>
+        <active>true</active>
+        <businessProcess>Individual Donation</businessProcess>
+        <description>Gifts from Individual under 10k</description>
+        <label>Individual Donation</label>
+        <picklistValues>
+            <picklist>Current_Standing__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Financial_Reporting_Requirements__c</picklist>
+            <values>
+                <fullName>Actuals Against Approved Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Actuals Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Narrative Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Gift_Allocated_to_Segment__c</picklist>
+            <values>
+                <fullName>Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NGO%2FPartner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Revenue %28ex%2E trip payment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Payment_Method__c</picklist>
+            <values>
+                <fullName>Multiple Payments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reimbursements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Payment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Type__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Road Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_for_Individual_Donors__c</picklist>
+            <values>
+                <fullName>Boston %28NH%2C MA%2C ME%2C RI%2C VT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>California</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chicago %28IL%2C WI%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INTERNATIONAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York %28CT%2C PA%2C NJ%2C NY%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28East Coast%2C Midwest%2C and South%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28Western States%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC %28DC%2C MD%2C VA%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payee_Code__c</picklist>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Same Level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Method__c</picklist>
+            <values>
+                <fullName>Amex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Kind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PayPal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wire Transfer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Status__c</picklist>
+            <values>
+                <fullName>Expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rejection_Reason__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic Fit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Restrictions__c</picklist>
+            <values>
+                <fullName>Expense Type Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matching Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Group Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Federal Grant Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unrestricted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Solicitation_Response__c</picklist>
+            <values>
+                <fullName>Earthshare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Site</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ProposalGrant</fullName>
+        <active>true</active>
+        <businessProcess>test1</businessProcess>
+        <description>Proposals/Grants and Individual gifts 10k and over</description>
+        <label>Proposal/Grant</label>
+        <picklistValues>
+            <picklist>Current_Standing__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Financial_Reporting_Requirements__c</picklist>
+            <values>
+                <fullName>Actuals Against Approved Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Actuals Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Narrative Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Gift_Allocated_to_Segment__c</picklist>
+            <values>
+                <fullName>Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NGO%2FPartner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Revenue %28ex%2E trip payment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Payment_Method__c</picklist>
+            <values>
+                <fullName>Multiple Payments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reimbursements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Payment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Type__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Road Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_for_Individual_Donors__c</picklist>
+            <values>
+                <fullName>Boston %28NH%2C MA%2C ME%2C RI%2C VT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>California</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chicago %28IL%2C WI%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INTERNATIONAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York %28CT%2C PA%2C NJ%2C NY%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28East Coast%2C Midwest%2C and South%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28Western States%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC %28DC%2C MD%2C VA%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payee_Code__c</picklist>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Same Level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Method__c</picklist>
+            <values>
+                <fullName>Amex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Kind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PayPal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wire Transfer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Status__c</picklist>
+            <values>
+                <fullName>Expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rejection_Reason__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic Fit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Restrictions__c</picklist>
+            <values>
+                <fullName>Expense Type Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matching Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Group Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Federal Grant Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unrestricted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Solicitation_Response__c</picklist>
+            <values>
+                <fullName>Earthshare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Site</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Public_Funding</fullName>
+        <active>true</active>
+        <businessProcess>Public Funding</businessProcess>
+        <description>Record type and sales process for public funding opportunities.</description>
+        <label>Public Funding</label>
+        <picklistValues>
+            <picklist>Current_Standing__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Financial_Reporting_Requirements__c</picklist>
+            <values>
+                <fullName>Actuals Against Approved Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Actuals Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Narrative Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Gift_Allocated_to_Segment__c</picklist>
+            <values>
+                <fullName>Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NGO%2FPartner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Revenue %28ex%2E trip payment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Payment_Method__c</picklist>
+            <values>
+                <fullName>Multiple Payments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reimbursements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Payment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Type__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footer Signup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Road Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscribe Page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_for_Individual_Donors__c</picklist>
+            <values>
+                <fullName>Boston %28NH%2C MA%2C ME%2C RI%2C VT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>California</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chicago %28IL%2C WI%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INTERNATIONAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York %28CT%2C PA%2C NJ%2C NY%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28East Coast%2C Midwest%2C and South%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28Western States%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC %28DC%2C MD%2C VA%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payee_Code__c</picklist>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Same Level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Method__c</picklist>
+            <values>
+                <fullName>Amex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Kind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PayPal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wire Transfer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Status__c</picklist>
+            <values>
+                <fullName>Expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rejection_Reason__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic Fit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Restrictions__c</picklist>
+            <values>
+                <fullName>Expense Type Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matching Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Group Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Federal Grant Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unrestricted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Solicitation_Response__c</picklist>
+            <values>
+                <fullName>Earthshare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Site</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>World_Bank_Opportunity</fullName>
+        <active>true</active>
+        <businessProcess>World Bank Opportunity</businessProcess>
+        <description>Information relating to World Bank opportunities.</description>
+        <label>World Bank Opportunity</label>
+        <picklistValues>
+            <picklist>Current_Standing__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Financial_Reporting_Requirements__c</picklist>
+            <values>
+                <fullName>Actuals Against Approved Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Actuals Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Narrative Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Gift_Allocated_to_Segment__c</picklist>
+            <values>
+                <fullName>Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NGO%2FPartner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Revenue %28ex%2E trip payment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Payment_Method__c</picklist>
+            <values>
+                <fullName>Multiple Payments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reimbursements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Payment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Type__c</picklist>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footer Signup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Road Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscribe Page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_for_Individual_Donors__c</picklist>
+            <values>
+                <fullName>Boston %28NH%2C MA%2C ME%2C RI%2C VT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>California</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chicago %28IL%2C WI%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INTERNATIONAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York %28CT%2C PA%2C NJ%2C NY%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28East Coast%2C Midwest%2C and South%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER US %28Western States%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC %28DC%2C MD%2C VA%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payee_Code__c</picklist>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Same Level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Method__c</picklist>
+            <values>
+                <fullName>Amex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Kind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PayPal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wire Transfer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Status__c</picklist>
+            <values>
+                <fullName>Expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rejection_Reason__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic Fit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Restrictions__c</picklist>
+            <values>
+                <fullName>Expense Type Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matching Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Group Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Restriction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Federal Grant Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unrestricted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Solicitation_Response__c</picklist>
+            <values>
+                <fullName>Earthshare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Memorial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Site</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Decrease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.STAGE_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.AMOUNT</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OPPORTUNITY.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.SITE</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.AMOUNT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.EXP_AMOUNT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Grant_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Current_Standing__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>No_Concept_for_Opportunity</fullName>
+        <active>true</active>
+        <description>Makes certain probability is 0% for opportunities where the Stage jumps from Lead to Proposal in Progress (no concept developed/submitted)</description>
+        <errorConditionFormula>(PRIORVALUE(StageName)!= &apos;Concept In Progress&apos;  ||  PRIORVALUE(StageName) != &apos;Concept Submitted&apos;) &amp;&amp; Probability = 10</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>There was no concept submitted for this opportunity. Please change the Probability to 0% before saving.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SubmissionAsk_and_submissiondate</fullName>
+        <active>true</active>
+        <description>Once the stage is set to Submission Ask, the Submission Date field is required</description>
+        <errorConditionFormula>AND (
+  OR (
+     ISPICKVAL(StageName, &quot;Submission/Ask&quot;)),
+ISNULL( Proposal_Mail_Date__c )
+)</errorConditionFormula>
+        <errorDisplayField>Proposal_Mail_Date__c</errorDisplayField>
+        <errorMessage>If Stage is Submission/Ask, then Submission Date Field MUST be filled in</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>APXTConga4__Conga_Mail_Merge</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>450</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Conga Merge</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx?sessionId={!API.Session_ID}&amp;serverUrl={!API.Partner_Server_URL_80}&amp;id={!Opportunity.Id}</url>
+        <width>625</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Allocated_vs_Expected</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Allocated vs. Expected</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://na1.salesforce.com/00O30000001fSGC?pv0={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Individual_Donation</fullName>
+        <availability>online</availability>
+        <description>Creates a new individual donation opportunity from the contact record.</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Individual Donation</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <scontrol>Create_Individual_Donation_from_Contact</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>MA_MapIt_a0o800000024doMAAQ</fullName>
+        <availability>online</availability>
+        <description>Maps this Opportunity with selected tooltips</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Map It</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/sma__mapanything?recordId={!Opportunity.Id}&amp;baseObjectId=a0o800000024doMAAQ&amp;tooltipField=Name&amp;tooltipField2=Type&amp;tooltipField3=StageName&amp;tooltipField4=Amount&amp;tooltipField5=CloseDate&amp;tooltipField6=LeadSource&amp;color=%2366FF00</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Edit</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Edit</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassEditOpp</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Update</fullName>
+        <availability>online</availability>
+        <description>Mass update</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Update</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassUpdateOpportunity</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>geopointe__Map</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Map</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Site.Prefix+&apos;/apex/geopointe__Map?id=&apos;+Opportunity.Id)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>geopointe__Map_Records_Opportunity</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>(deprecated)</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>alert(&apos;This link has been deprecated&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>geopointe__Map_Records_Opportunity2</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Map Records</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>// Get data array 
+idArray = {!GETRECORDIDS($ObjectType.Opportunity)}; 
+
+// Set variables 
+var hostname = window.location.hostname; 
+var server = &apos;na1&apos;; 
+var usePost = true; 
+var bContinue = true; 
+
+// Make sure they selected some records 
+if (idArray[0] == null){ 
+bContinue = false; 
+alert(&apos;Please select at least one row&apos;); 
+} 
+
+if (bContinue){
+
+// Do things based upon the domain we are on 
+if (hostname.indexOf(&quot;.my.salesforce.com&quot;) != -1){ 
+usePost = false; 
+if (idArray.length &gt; 100){ 
+bContinue = false; 
+alert(&apos;When using the My Domain feature in Salesforce, you are limited to mapping 100 records&apos;); 
+} 
+} else if (hostname.indexOf(&quot;.salesforce.com&quot;) != -1){ 
+bContinue = true; 
+usePost = true; 
+server = hostname.substring(0,hostname.indexOf(&quot;.salesforce.com&quot;) ); 
+} else if (hostname.indexOf(&quot;.force.com&quot;) != -1){ 
+bContinue = true; 
+usePost = true; 
+server = hostname.substring(0,hostname.indexOf(&quot;.force.com&quot;) ); 
+} 
+
+if (server == &quot;ssl&quot;){ server = &quot;na0&quot;; }
+if (server == &quot;emea&quot;){ server = &quot;eu0&quot;; }
+
+}
+
+if (bContinue){ 
+
+// Submit URL 
+f=document.createElement(&quot;form&quot;); 
+f.target = &quot;_blank&quot;; 
+
+if (usePost){ 
+f.action=&quot;https://geopointe.&quot; + server + &quot;.visual.force.com/apex/Map&quot;; 
+f.method = &quot;post&quot;; 
+} else { 
+f.action=&quot;/apex/geopointe__Map&quot;; 
+f.method = &quot;get&quot;; 
+} 
+
+i= document.createElement(&quot;input&quot;); 
+i.id = &quot;idArray&quot;; 
+i.name = &quot;idArray&quot;; 
+i.type = &quot;hidden&quot;; 
+i.value = idArray; 
+f.appendChild(i); 
+
+document.body.appendChild(f); 
+
+f.submit(); 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>geopointe__Map_newWindow</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>5000</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Map</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>{!URLFOR($Site.Prefix+&apos;/apex/geopointe__Map?id=&apos;+Opportunity.Id)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>pexmaps__Google_Map</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Google Map</masterLabel>
+        <openType>sidebar</openType>
+        <page>pexmaps__TerritoriesListOpportunities</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

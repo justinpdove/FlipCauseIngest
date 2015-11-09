@@ -1,0 +1,36 @@
+<apex:page controller="CTIntegrationController_CT" title="CT Integration" >
+
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton action="{!RefreshPrograms}" value="Refresh Programs"/>
+<!-- <apex:commandButton action="{!RefreshOrganizations}" value="Refresh Organizations"/> -->
+<!-- <apex:commandButton action="{!RefreshUsers}" value="Refresh Users"/>    -->
+    
+<!-- <apex:commandButton action="{!RefreshCampaigns}" value="Refresh Campaigns"/> -->
+<apex:commandButton action="{!RefreshScorecards}" value="Refresh Scorecards"/>
+<apex:commandButton action="{!RefreshQuestions}" value="Refresh Questions"/>
+<!-- <apex:commandButton action="{!RefreshAnswers}" value="Refresh Answers"/> -->
+</apex:pageBlockButtons>
+
+<apex:pageMessage rendered="{!bShowCampaignSubmitted}" severity="INFO">
+Campaign Refresh Submitted
+</apex:pageMessage>
+
+<apex:pageMessage rendered="{!bShowAnswersSubmitted}" severity="INFO">
+Answer Refresh Submitted
+</apex:pageMessage>
+
+
+<apex:pageBlockSection >
+<apex:outputText >
+Success? {!mda.bSuccess}
+</apex:outputText>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:form>
+
+
+</apex:page>

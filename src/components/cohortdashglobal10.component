@@ -1,0 +1,30 @@
+<apex:component access="global" controller="bfc_globaldashcontroller">
+<apex:attribute name="fyear" assignTo="{!fyear}" description="This is the value for the fy year." type="String"/>
+
+<apex:dataTable styleClass="pageBlockTable" cellpadding="1" border="1" value="{!gtracking}" var="t">
+    <apex:column > 
+     <apex:facet name="header">Stage</apex:facet>
+    {!t.Display_Stage__c}
+    </apex:column> 
+    <apex:column >
+    <apex:facet name="header">Current</apex:facet>
+     <apex:outputfield value="{!t.Dash_Current__c}"/>
+    </apex:column> 
+    <apex:column >
+    <apex:facet name="header">Complete</apex:facet>
+<apex:outputfield value="{!t.Dash_Completed__c}"/>
+    </apex:column> 
+    <apex:column >
+    <apex:facet name="header">Ended</apex:facet>
+<apex:outputfield value="{!t.Dash_Ended__c}"/>
+    </apex:column> 
+<apex:column >
+   <apex:facet name="header">Cohort<br/> to Date</apex:facet>
+<apex:outputfield value="{!t.Dash_Cohort_to_Date__c}"/>
+    </apex:column> 
+    <apex:column >
+      <apex:facet name="header">Target</apex:facet>
+<apex:outputfield value="{!t.Target_FY_10__c}"/>
+    </apex:column> 
+</apex:dataTable>
+</apex:component>
