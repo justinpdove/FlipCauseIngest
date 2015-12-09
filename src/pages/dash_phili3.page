@@ -1,3 +1,0 @@
-<apex:page sidebar="false">
-<c:cohortdash dashcohort="Phili 3"/>            
-</apex:page>

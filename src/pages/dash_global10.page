@@ -1,3 +1,0 @@
-<apex:page sidebar="false">
-<c:cohortdashglobal10 fyear="FY 10"/>            
-</apex:page>
